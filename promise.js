@@ -45,7 +45,19 @@ function squarer(num){
 /**
  * Promise.resolve
  */
-Promise.resolve({text:" I am a resolveer"})
+/*Promise.resolve({text:" I am a resolveer"})
 .then((data)=>{
     console.log(data.text);
-});
+}); */
+
+function resolver(){
+    let arr = [10,30,50,70,90];
+    return Promise.resolve(arr.map((list)=>{
+        return list * 10;
+    }))
+}
+
+resolver().
+then((data)=>{
+    console.log(data);
+})
