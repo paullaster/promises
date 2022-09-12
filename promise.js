@@ -110,3 +110,35 @@ timeLogger("wueh! LOVE", "7000")
 .catch((err)=>{
     console.error(err.message + ' \n');
 });
+
+/**
+ * Returning promses in then
+ */
+Promise.resolve("Apples")
+.then((data)=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(data + " Iphone 14");
+        }, 100);
+    });
+})
+.then((data)=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(data + " Pro");
+        }, 50);
+    });
+})
+.then((data)=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            resolve(data + " Max  + \n");
+        }, 10);
+    });;
+})
+.then((data)=>{
+    console.log(data);
+})
+.catch((err)=>{
+    console.error(err.message );
+});
