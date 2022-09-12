@@ -56,8 +56,42 @@ function resolver(){
         return list * 10;
     }))
 }
-
+/*
 resolver().
 then((data)=>{
+    console.log(data);
+})
+*/
+
+/**
+ * Time logger using promises
+ */
+
+function timeLogger(message, time){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(message);
+        }, time)
+    })
+};
+
+timeLogger("I love Cynthia", 2500)
+.then((data)=>{
+    console.log(data)
+    return timeLogger("Cynthia is a amazaing beauty", 2000);
+})
+.then((data)=>{
+    console.log(data);
+    return timeLogger("She's a soft spoken princess", 1500);
+})
+.then((data)=>{
+    console.log(data);
+    return timeLogger("Her smile is a charm", 1000);
+})
+.then((data)=>{
+    console.log(data);
+    return timeLogger("Cynthia's intelligence is inspirational", 800);
+})
+.then((data)=>{
     console.log(data);
 })
