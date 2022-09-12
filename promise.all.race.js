@@ -17,6 +17,10 @@ employeeInfo.then((data)=>{
     console.log(data);
 });
 */
-Promise.all([logins, employeeInfo]).then((data)=>{
+Promise.all([logins, employeeInfo])
+.then((data)=>{
     console.log(data);
+})
+.catch((err)=>{
+    console.log(err);
 });
