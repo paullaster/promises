@@ -9,11 +9,11 @@ const myPromise = new Promise( (resolve,reject)=>{
         resolve("I am a promise");
     }, 1500)
 });
-/*myPromise.then((data)=>{
+myPromise.then((data)=>{
     console.log(data);
 }).then(()=>{
     console.log("I am an output stream after promise is resolved");
-}).catch((err)=>{   console.log(err)})*/
+}).catch((err)=>{   console.log(err)})
 
 /**
  * Promises in action
