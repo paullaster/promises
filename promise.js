@@ -71,7 +71,10 @@ function timeLogger(message, time){
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
             resolve(message);
-        }, time)
+        }, time);
+        if(typeof message !== 'string' || typeof time !== 'number'){
+            reject({message:"Wrong Type"});
+        };
     })
 };
 
@@ -95,3 +98,16 @@ timeLogger("I love Cynthia", 2500)
 .then((data)=>{
     console.log(data);
 })
+.catch((err)=>{
+    console.error(err.message);
+});
+/**
+ * calling timie loger with wron type
+ */
+timeLogger("wueh! LOVE", "7000")
+.then((data)=>{
+    console.log(data);
+})
+.catch((err)=>{
+    console.error(err.message + ' \n');
+});
