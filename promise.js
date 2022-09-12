@@ -28,6 +28,18 @@ function adder(num1,num2){
     })
 }
 
+function squarer(num){
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve(num * num);
+        },1700);
+    })
+}
+
 adder(10,2).then((data)=>{
+    console.log(data);
+})
+
+squarer(10).then((data)=>{
     console.log(data);
 })
