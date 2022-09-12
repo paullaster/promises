@@ -32,14 +32,12 @@ function squarer(num){
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
             resolve(num * num);
-        },1700);
+        },700);
     })
 }
 
 adder(10,2).then((data)=>{
-    console.log(data);
-})
-
-squarer(10).then((data)=>{
-    console.log(data);
+    return squarer(data);
+}).then((squaredData)=>{
+    console.log(squaredData);
 })
