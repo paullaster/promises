@@ -9,12 +9,12 @@ const myPromise = new Promise( (resolve,reject)=>{
         resolve("I am a promise");
     }, 1500)
 });
-/*myPromise.then((data)=>{
+myPromise.then((data)=>{
     console.log(data);
 }).then(()=>{
     console.log("I am an output stream after promise is resolved");
 }).catch((err)=>{   console.log(err)})
-*/
+
 /**
  * Promises in action
  */
@@ -36,19 +36,19 @@ function squarer(num){
     })
 }
 
-/*adder(10,2).then((data)=>{
+adder(10,2).then((data)=>{
     return squarer(data);
 }).then((squaredData)=>{
     console.log(squaredData);
-})*/
+})
 
 /**
  * Promise.resolve
  */
-/*Promise.resolve({text:" I am a resolveer"})
+Promise.resolve({text:" I am a resolveer"})
 .then((data)=>{
     console.log(data.text);
-}); */
+}); 
 
 function resolver(){
     let arr = [10,30,50,70,90];
@@ -56,12 +56,11 @@ function resolver(){
         return list * 10;
     }))
 }
-/*
+
 resolver().
 then((data)=>{
     console.log(data);
 })
-*/
 
 /**
  * Time logger using promises
